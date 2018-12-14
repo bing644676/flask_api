@@ -1,0 +1,227 @@
+2018-12-14 14:14:06 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:18:03 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:22:11 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:27:30 [ERROR] [template_controller.py:140] Traceback (most recent call last):
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 166, in execute
+    result = self._query(query)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1057, in _read_query_result
+    result.read()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1264, "Out of range value for column 'advertiser_id' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\maimeng\emar_api\emar_template\template_controller.py", line 134, in post
+    session.commit()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2243, in flush
+    self._flush(objects)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2369, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2333, in _flush
+    flush_context.execute()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 166, in execute
+    result = self._query(query)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1057, in _read_query_result
+    result.read()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1264, "Out of range value for column 'advertiser_id' at row 1") [SQL: 'INSERT INTO campaign (advertiser_id, creative_name, category, platform, budget, price, status, adx_ids, speed, start_date, end_date, week_hours, areas, ip_list, device_brand, device_price, connection, os, lbs, crowds, creatives) VALUES (%(advertiser_id)s, %(creative_name)s, %(category)s, %(platform)s, %(budget)s, %(price)s, %(status)s, %(adx_ids)s, %(speed)s, %(start_date)s, %(end_date)s, %(week_hours)s, %(areas)s, %(ip_list)s, %(device_brand)s, %(device_price)s, %(connection)s, %(os)s, %(lbs)s, %(crowds)s, %(creatives)s)'] [parameters: {'advertiser_id': '1000020000000100000', 'creative_name': 'jikestar_model', 'category': '87', 'platform': '2', 'budget': '1200', 'price': '0.4', 'status': '0', 'adx_ids': '[1,2]', 'speed': '0', 'start_date': None, 'end_date': None, 'week_hours': None, 'areas': None, 'ip_list': None, 'device_brand': None, 'device_price': None, 'connection': None, 'os': None, 'lbs': None, 'crowds': None, 'creatives': '[123,231]'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+
+2018-12-14 14:27:30 [ERROR] [template_controller.py:141] (pymysql.err.DataError) (1264, "Out of range value for column 'advertiser_id' at row 1") [SQL: 'INSERT INTO campaign (advertiser_id, creative_name, category, platform, budget, price, status, adx_ids, speed, start_date, end_date, week_hours, areas, ip_list, device_brand, device_price, connection, os, lbs, crowds, creatives) VALUES (%(advertiser_id)s, %(creative_name)s, %(category)s, %(platform)s, %(budget)s, %(price)s, %(status)s, %(adx_ids)s, %(speed)s, %(start_date)s, %(end_date)s, %(week_hours)s, %(areas)s, %(ip_list)s, %(device_brand)s, %(device_price)s, %(connection)s, %(os)s, %(lbs)s, %(crowds)s, %(creatives)s)'] [parameters: {'advertiser_id': '1000020000000100000', 'creative_name': 'jikestar_model', 'category': '87', 'platform': '2', 'budget': '1200', 'price': '0.4', 'status': '0', 'adx_ids': '[1,2]', 'speed': '0', 'start_date': None, 'end_date': None, 'week_hours': None, 'areas': None, 'ip_list': None, 'device_brand': None, 'device_price': None, 'connection': None, 'os': None, 'lbs': None, 'crowds': None, 'creatives': '[123,231]'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+2018-12-14 14:27:30 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:27:30] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 14:28:37 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:28:40 [ERROR] [template_controller.py:140] Traceback (most recent call last):
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 166, in execute
+    result = self._query(query)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1057, in _read_query_result
+    result.read()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1264, "Out of range value for column 'advertiser_id' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\maimeng\emar_api\emar_template\template_controller.py", line 134, in post
+    session.commit()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2243, in flush
+    self._flush(objects)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2369, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\session.py", line 2333, in _flush
+    flush_context.execute()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 166, in execute
+    result = self._query(query)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1057, in _read_query_result
+    result.read()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\maida\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1264, "Out of range value for column 'advertiser_id' at row 1") [SQL: 'INSERT INTO campaign (advertiser_id, creative_name, category, platform, budget, price, status, adx_ids, speed, start_date, end_date, week_hours, areas, ip_list, device_brand, device_price, connection, os, lbs, crowds, creatives) VALUES (%(advertiser_id)s, %(creative_name)s, %(category)s, %(platform)s, %(budget)s, %(price)s, %(status)s, %(adx_ids)s, %(speed)s, %(start_date)s, %(end_date)s, %(week_hours)s, %(areas)s, %(ip_list)s, %(device_brand)s, %(device_price)s, %(connection)s, %(os)s, %(lbs)s, %(crowds)s, %(creatives)s)'] [parameters: {'advertiser_id': '1000020000000200000', 'creative_name': 'jikestar_model', 'category': '87', 'platform': '2', 'budget': '1200', 'price': '0.4', 'status': '0', 'adx_ids': '[1,2]', 'speed': '0', 'start_date': None, 'end_date': None, 'week_hours': None, 'areas': None, 'ip_list': None, 'device_brand': None, 'device_price': None, 'connection': None, 'os': None, 'lbs': None, 'crowds': None, 'creatives': '[123,231]'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+
+2018-12-14 14:28:40 [ERROR] [template_controller.py:141] (pymysql.err.DataError) (1264, "Out of range value for column 'advertiser_id' at row 1") [SQL: 'INSERT INTO campaign (advertiser_id, creative_name, category, platform, budget, price, status, adx_ids, speed, start_date, end_date, week_hours, areas, ip_list, device_brand, device_price, connection, os, lbs, crowds, creatives) VALUES (%(advertiser_id)s, %(creative_name)s, %(category)s, %(platform)s, %(budget)s, %(price)s, %(status)s, %(adx_ids)s, %(speed)s, %(start_date)s, %(end_date)s, %(week_hours)s, %(areas)s, %(ip_list)s, %(device_brand)s, %(device_price)s, %(connection)s, %(os)s, %(lbs)s, %(crowds)s, %(creatives)s)'] [parameters: {'advertiser_id': '1000020000000200000', 'creative_name': 'jikestar_model', 'category': '87', 'platform': '2', 'budget': '1200', 'price': '0.4', 'status': '0', 'adx_ids': '[1,2]', 'speed': '0', 'start_date': None, 'end_date': None, 'week_hours': None, 'areas': None, 'ip_list': None, 'device_brand': None, 'device_price': None, 'connection': None, 'os': None, 'lbs': None, 'crowds': None, 'creatives': '[123,231]'}] (Background on this error at: http://sqlalche.me/e/9h9h)
+2018-12-14 14:28:40 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:28:40] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 14:29:44 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:29:47 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:29:47] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 14:30:28 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:30:28] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 14:30:40 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:30:40] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 14:30:49 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:30:49] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 14:30:59 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:30:59] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 14:33:19 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:33:19] "POST /campaign/update HTTP/1.1" 400 -
+2018-12-14 14:34:40 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:34:41 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:34:41] "POST /campaign/update HTTP/1.1" 400 -
+2018-12-14 14:35:32 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:35:32 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:35:32] "POST /campaign/update HTTP/1.1" 400 -
+2018-12-14 14:38:00 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:38:02 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:38:02] "POST /campaign/update HTTP/1.1" 200 -
+2018-12-14 14:39:02 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 14:40:25 [INFO] [template_controller.py:37] creative task_list: SELECT campaign.id AS campaign_id, campaign.advertiser_id AS campaign_advertiser_id, campaign.creative_name AS campaign_creative_name, campaign.category AS campaign_category, campaign.platform AS campaign_platform, campaign.budget AS campaign_budget, campaign.price AS campaign_price, campaign.status AS campaign_status, campaign.adx_ids AS campaign_adx_ids, campaign.speed AS campaign_speed, campaign.start_date AS campaign_start_date, campaign.end_date AS campaign_end_date, campaign.week_hours AS campaign_week_hours, campaign.areas AS campaign_areas, campaign.ip_list AS campaign_ip_list, campaign.device_brand AS campaign_device_brand, campaign.device_price AS campaign_device_price, campaign.connection AS campaign_connection, campaign.os AS campaign_os, campaign.lbs AS campaign_lbs, campaign.crowds AS campaign_crowds, campaign.creatives AS campaign_creatives 
+FROM campaign 
+WHERE campaign.advertiser_id = %(advertiser_id_1)s
+2018-12-14 14:40:25 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:40:25] "GET /campaign/query HTTP/1.1" 200 -
+2018-12-14 14:43:11 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:43:11] "GET /campaign/list HTTP/1.1" 400 -
+2018-12-14 14:43:33 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:43:33] "GET /campaign/list HTTP/1.1" 200 -
+2018-12-14 14:44:31 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:44:31] "GET /campaign/list HTTP/1.1" 200 -
+2018-12-14 14:49:35 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:49:35] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 14:50:12 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:50:12] "POST /campaign/update HTTP/1.1" 500 -
+2018-12-14 14:58:40 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 14:58:40] "POST /campaign/update HTTP/1.1" 200 -
+2018-12-14 15:01:03 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:01:03] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 15:04:43 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 15:04:44 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:04:44] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 15:05:22 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 15:05:23 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:05:23] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 15:05:47 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:05:47] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 15:08:42 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 15:08:43 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:08:43] "POST /campaign/add HTTP/1.1" 500 -
+2018-12-14 15:11:44 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 15:11:46 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:11:46] "POST /campaign/add HTTP/1.1" 400 -
+2018-12-14 15:12:18 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:12:18] "GET /campaign/list HTTP/1.1" 200 -
+2018-12-14 15:13:23 [INFO] [_internal.py:88]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-14 15:13:25 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:13:25] "GET /campaign/list HTTP/1.1" 200 -
+2018-12-14 15:13:28 [INFO] [template_controller.py:45] creative task_list: SELECT campaign.id AS campaign_id, campaign.advertiser_id AS campaign_advertiser_id, campaign.creative_name AS campaign_creative_name, campaign.category AS campaign_category, campaign.platform AS campaign_platform, campaign.budget AS campaign_budget, campaign.price AS campaign_price, campaign.status AS campaign_status, campaign.adx_ids AS campaign_adx_ids, campaign.speed AS campaign_speed, campaign.start_date AS campaign_start_date, campaign.end_date AS campaign_end_date, campaign.week_hours AS campaign_week_hours, campaign.areas AS campaign_areas, campaign.ip_list AS campaign_ip_list, campaign.device_brand AS campaign_device_brand, campaign.device_price AS campaign_device_price, campaign.connection AS campaign_connection, campaign.os AS campaign_os, campaign.lbs AS campaign_lbs, campaign.crowds AS campaign_crowds, campaign.creatives AS campaign_creatives 
+FROM campaign 
+WHERE campaign.advertiser_id = %(advertiser_id_1)s
+2018-12-14 15:13:28 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:13:28] "GET /campaign/query HTTP/1.1" 200 -
+2018-12-14 15:13:33 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:13:33] "POST /campaign/add HTTP/1.1" 200 -
+2018-12-14 15:14:10 [INFO] [_internal.py:88] 127.0.0.1 - - [14/Dec/2018 15:14:10] "POST /campaign/add HTTP/1.1" 400 -
